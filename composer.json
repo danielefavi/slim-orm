@@ -1,0 +1,25 @@
+{
+    "name": "danielefavi/slim-orm",
+    "description": "Lightweight ORM with an api similar to Laravel Eloquent.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DfTools\\SlimOrm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DfTools\\SlimOrm\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniele",
+            "email": "info@danielefavi.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

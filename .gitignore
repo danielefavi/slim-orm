@@ -1,0 +1,5 @@
+vendor/
+composer.lock
+tests/dbtest.db
+.phpunit.result.cache
+examples/sqlite.db
