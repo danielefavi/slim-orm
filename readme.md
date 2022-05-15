@@ -8,6 +8,12 @@ Please check some examples below.
 
 ## Installation
 
+## Installation via composer
+
+```sh
+composer require danielefavi/slim-orm
+```
+
 ## Setup
 
 Setting up the DB object with **MySQL**:
