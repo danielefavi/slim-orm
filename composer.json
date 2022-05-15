@@ -1,6 +1,6 @@
 {
     "name": "danielefavi/slim-orm",
-    "description": "Lightweight ORM with an api similar to Laravel Eloquent.",
+    "description": "Lightweight ORM with an API interface similar to Laravel's ORM Eloquent.",
     "type": "library",
     "license": "MIT",
     "autoload": {
