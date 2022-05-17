@@ -152,6 +152,21 @@ abstract class Model
     }
 
     /**
+     * Insert a new record in the database and return the model instance.
+     *
+     * @param array $data
+     * @return self|null
+     */
+    public static function create(array $data): ?self
+    {
+        if (! static::insert($data)) {
+            return null;
+        }
+    
+        return static::initStatic($data);
+    }
+
+    /**
      * Initialize the model instance: set the data and the primary key value.
      *
      * @param array|null $data

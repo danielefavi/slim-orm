@@ -74,6 +74,7 @@ class QueryBuilder
         'delete',
         'get',
         'first',
+        'create',
         'count',
         'max',
         'min',
@@ -488,7 +489,7 @@ class QueryBuilder
      * Build the INSERT query, execute it and it returns the last insert ID.
      *
      * @param array $data
-     * @return void
+     * @return mixed
      */
     public function insert(array $data)
     {

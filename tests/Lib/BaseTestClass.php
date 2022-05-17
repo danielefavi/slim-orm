@@ -219,14 +219,31 @@ class BaseTestClass extends TestCase
      */
     protected function createFakeUsers(int $num=0): array
     {
-        $users = [];
-
-        for ($i=1; $i <= $num; $i++) { 
-            $users[] = (object)[ 'id' => $i, 'name' => "Test $i", 'age' => $i * 10 ];
-        }
+        $users = $this->generateFakeUsersData($num);
 
         foreach ($users as $user) {
             $this->db()->execStatement("INSERT INTO users (`id`, `name`, `age`) VALUES (".$user->id.", '".$user->name."', ".$user->age.")");
+        }
+
+        return $users;
+    }
+
+    /**
+     * Generate user data for testing without adding anything to the database.
+     *
+     * @param integer $num
+     * @return array
+     */
+    protected function generateFakeUsersData(int $num=0): array
+    {
+        $users = [];
+
+        for ($i=1; $i <= $num; $i++) { 
+            $users[] = (object)[
+                'id' => $i, 
+                'name' => "Test $i", 
+                'age' => $i * 10
+            ];
         }
 
         return $users;

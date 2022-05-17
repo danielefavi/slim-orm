@@ -168,6 +168,20 @@ class ModelTest extends BaseTestClass
     }
 
     /** @test */
+    public function create_test()
+    {
+        $this->refreshDb();
+        
+        $userData = (array)$this->generateFakeUsersData(1)[0];
+
+        $res = $this->db()->query("SELECT count(*) `tot` FROM `users`");
+        $this->assertEquals(0, $res[0]->tot);
+
+        $user = UsersModel::create($userData);
+        $this->assertEquals($userData, $user->toArray());
+    }
+
+    /** @test */
     public function the_initModelData_should_set_the_primary_key_value()
     {
         $user = new UsersModel([
